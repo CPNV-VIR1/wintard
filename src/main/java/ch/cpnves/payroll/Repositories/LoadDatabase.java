@@ -14,8 +14,8 @@ public class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(PotatoRepository repository){
         return args->{
-            log.info("Preloading " + repository.save(new Potato("Bilbo Baggins", "burglar")));
-            log.info("Preloading " + repository.save(new Potato("Frodo Baggins", "thief")));
+            log.info("Preloading " + repository.save(new Potato("BF 15", "Pomme au four")));
+            log.info("Preloading " + repository.save(new Potato("Ratte", "Pomme de terre rissolée")));
         };
     }
 }
