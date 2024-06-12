@@ -12,13 +12,13 @@ public class Potato {
     private @Id
     @GeneratedValue Long id;
     private String name;
-    private String role;
+    private String usage;
 
     public Potato(){}
 
-    public Potato(String name, String role){
+    public Potato(String name, String usage){
         this.setName(name);
-        this.setRole(role);
+        this.setUsage(usage);
     }
 
     public Long getID(){
@@ -37,12 +37,12 @@ public class Potato {
         this.name = name;
     }
 
-    public String getRole(){
-        return this.role;
+    public String getUsage(){
+        return this.usage;
     }
 
-    public void setRole(String role){
-        this.role = role;
+    public void setUsage(String usage){
+        this.usage = usage;
     }
 
     @Override
@@ -52,16 +52,16 @@ public class Potato {
         if(!(o instanceof Potato potato))
             return false;
         return Objects.equals(this.id, potato.id) && Objects.equals(this.name, potato.name)
-                && Objects.equals(this.role, potato.role);
+                && Objects.equals(this.usage, potato.usage);
     }
 
     @Override
     public int hashCode(){
-        return Objects.hash(this.id, this.name, this.role);
+        return Objects.hash(this.id, this.name, this.usage);
     }
 
     @Override
     public String toString(){
-        return "Potato{" + "id=" + this.getID() + ", name='" + this.getName() + '\'' + ", role='" + this.getRole() + '\'' + '}';
+        return "Potato{" + "id=" + this.getID() + ", name='" + this.getName() + '\'' + ", usage='" + this.getUsage() + '\'' + '}';
     }
 }
