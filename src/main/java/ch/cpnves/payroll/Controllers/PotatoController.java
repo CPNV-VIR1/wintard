@@ -26,7 +26,7 @@ public class PotatoController {
     /* curl sample :
     curl -i -X POST localhost:8080/potatoes ^
         -H "Content-type:application/json" ^
-        -d "{\"name\": \"Russel George\", \"role\": \"gardener\"}"
+        -d "{\"name\": \"Yukon Gold\", \"usage\": \"Pomme vapeur\"}"
     */
     @PostMapping("/potatoes")
     Potato newPotato(@RequestBody Potato newPotato){
@@ -45,14 +45,14 @@ public class PotatoController {
     /* curl sample :
     curl -i -X PUT localhost:8080/potatoes/2 ^
         -H "Content-type:application/json" ^
-        -d "{\"name\": \"Samwise Bing\", \"role\": \"peer-to-peer\"}"
+        -d "{\"name\": \"Estima\", \"usage\": \"Purée de pommes de terre\"}"
      */
     @PutMapping("/potatoes/{id}")
     Potato replacePotato(@RequestBody Potato newPotato, @PathVariable Long id) {
         return repository.findById(id)
                 .map(potato -> {
                     potato.setName(newPotato.getName());
-                    potato.setRole(newPotato.getRole());
+                    potato.setUsage(newPotato.setUsage());
                     return repository.save(potato);
                 })
                 .orElseGet(() -> {
