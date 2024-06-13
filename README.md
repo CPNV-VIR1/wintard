@@ -122,7 +122,7 @@ And you are good to go.
 
 ## License
 
-* [Choose the license adapted to your project](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
+* [MIT](LICENSE)
 
 ## Contact
 
