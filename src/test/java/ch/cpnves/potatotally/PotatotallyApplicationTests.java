@@ -1,10 +1,10 @@
-package ch.cpnves.payroll;
+package ch.cpnves.potatotally;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PayrollApplicationTests {
+class PotatotallyApplicationTests {
 
 	@Test
 	void contextLoads() {
