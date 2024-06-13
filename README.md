@@ -1,6 +1,6 @@
 # Spring - REST API
 
-Wintard - Potatolly
+Wintard - Potatotally
 
 ## Description
 
@@ -27,6 +27,7 @@ First time running the container
 ```bash
 docker compose up --build -d
 ```
+
 Running the container
 
 ```bash
@@ -50,75 +51,100 @@ http://localhost:8080
 * Tip: try the tree bash command
 
 ```shell
-├───assets
-├───docs
-├───ms-api-gateway
-│   └───nginx
-│       └───api_conf.d
-├───ms-db
-├───ms-delete
-│   ├───.mvn
-│   │   └───wrapper
-│   └───src
-│       ├───main
-│       │   └───java
-│       │       └───ch
-│       │           └───cpnves
-│       │               ├───potatotally
-│       │               │   ├───Controllers
-│       │               │   ├───Entities
-│       │               │   └───Repositories
-│       │               └───resources
-│       └───test
-│           └───java
-│               └───ch
-│                   └───cpnves
-│                       └───potatotally
-├───ms-get
-│   ├───.mvn
-│   │   └───wrapper
-│   └───src
-├───ms-post
-│   ├───.mvn
-│   │   └───wrapper
-│   └───src
-├───ms-put
-│   ├───.mvn
-│   │   └───wrapper
-│   └───src      
-└───target
-    ├───classes
-    │   └───ch
-    │       └───cpnves
-    │           └───potatotally
-    │               ├───Controllers
-    │               ├───Entities
-    │               └───Repositories
-    ├───generated-sources
-    │   └───annotations
-    ├───generated-test-sources
-    │   └───test-annotations
-    ├───maven-status
-    │   └───maven-compiler-plugin
-    │       ├───compile
-    │       │   └───default-compile
-    │       └───testCompile
-    │           └───default-testCompile
-    ├───surefire-reports
-    └───test-classes
-        └───ch
-            └───cpnves
-                └───payroll
+.
+├── assets
+│   ├── Proj3.drawio
+│   └── Proj3.png
+├── docs
+│   └── useCaseDiagram.wsd
+├── ms-api-gateway
+│   ├── Dockerfile
+│   └── nginx
+│       ├── api_backends.conf
+│       ├── api_conf.d
+│       │   └── potatoes_api.conf
+│       ├── api_gateway.conf
+│       └── nginx.conf
+├── ms-db
+│   └── Dockerfile
+├── ms-delete
+│   ├── .mvn
+│   │   └── wrapper
+│   │       ├── maven-wrapper.jar
+│   │       └── maven-wrapper.properties
+│   ├── Dockerfile
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   └── src
+│       ├── main
+│       │   └── java
+│       │       └── ch
+│       │           └── cpnves
+│       │               ├── potatotally
+│       │               │   ├── Controllers
+│       │               │   │   ├── PotatoController.java
+│       │               │   │   ├── PotatoNotFoundAdvice.java
+│       │               │   │   └── PotatoNotFoundException.java
+│       │               │   ├── Entities
+│       │               │   │   └── Potato.java
+│       │               │   ├── PotatotallyApplication.java
+│       │               │   └── Repositories
+│       │               │       ├── LoadDatabase.java
+│       │               │       └── PotatoRepository.java
+│       │               └── resources
+│       │                   └── application.properties
+│       └── test
+│           └── java
+│               └── ch
+│                   └── cpnves
+│                       └── potatotally
+│                           └── PotatotallyApplicationTests.java
+├── ms-get
+│   ├── Dockerfile
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   └── src
+│       ├── ...
+├── ms-post
+│   ├── Dockerfile
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   └── src
+│       ├── ...
+├── ms-put
+│   ├── Dockerfile
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   └── src
+│       ├── ...
+├── compose.yaml
+├── .dockerignore
+├── .env.example
+├── .gitignore
+└── README.md
+
 ```
 
 ## Collaborate
 
-* [How to collaborate]
-  * Ask to be added to the project on github
-    * Clone the project
-  * [How to commit](https://www.conventionalcommits.org/en/v1.0.0/)
+### Convention
 
-And you are good to go.
+#### Commit
+
+The project uses [Conventional Commits][Commit-url]. The keywords used are: `feat`, `fix`, `chore`, `refactor`, `test`, `docs`. The commits are named with the following pattern: `type: description` eg.(feat: add login page).
+
+#### file naming
+
+The project uses the following file naming convention.
+
+| Type  | Naming convention | Example              |
+| ----- | ----------------- | -------------------- |
+| Class | PascalCase        | `LoginPage.java`     |
+| Tests | PascalCase        | `LoginPageTest.java` |
 
 ## License
 
@@ -126,4 +152,12 @@ And you are good to go.
 
 ## Contact
 
-* Contact at noah.delgado1(at)eduvaud.ch or benjamin.fontana(at)eudvaud.ch
+### Noah Delgado
+
+* [Email](mailto:noah.delgado1@eduvaud.ch)
+
+### Benjamin FONTANA
+
+* [Email](mailto:benjamin.fontana@eduvaud.ch)
+
+[Commit-url]: https://www.conventionalcommits.org/
