@@ -22,8 +22,6 @@ List all dependencies and their version needed by the project as :
 
 ## Deployment
 
-### On dev environment
-
 First time running the container
 
 ```bash
@@ -35,21 +33,17 @@ Running the container
 docker compose up -d
 ```
 
-How to destroy the application on the dev environment.
+How to destroy containers
 
 ```shell
 docker compose down -v --rmi local
 ```
 
-How to access the application on the dev environment.
+How to access
 
 ```shell
 http://localhost:8080
 ```
-
-### On integration environment
-
-How to deploy the application outside the dev environment.
 
 ## Directory structure
 
