@@ -52,7 +52,7 @@ public class PotatoController {
         return repository.findById(id)
                 .map(potato -> {
                     potato.setName(newPotato.getName());
-                    potato.setUsage(newPotato.setUsage());
+                    potato.setUsage(newPotato.getUsage());
                     return repository.save(potato);
                 })
                 .orElseGet(() -> {
