@@ -1,9 +1,14 @@
 services:
-  api-gateway:
-    build: 
+  ms-api-gateway:
+    build:
       context: ./ms-api-gateway
     ports:
       - 8080:80
+    depends_on:
+      - ms-delete
+      - ms-get
+      - ms-post
+      - ms-put
   ms-db:
     build:
       context: ./ms-db
@@ -14,6 +19,37 @@ services:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
-
+  ms-delete:
+    build:
+      context: ./ms-delete
+    depends_on:
+      ms-db:
+        condition: service_healthy
+    environment:
+      - POSTGRES_URL=${DB_POSTGRES_URL}
+  ms-get:
+    build:
+      context: ./ms-get
+    depends_on:
+      ms-db:
+        condition: service_healthy
+    environment:
+      - POSTGRES_URL=${DB_POSTGRES_URL}
+  ms-post:
+    build:
+      context: ./ms-post
+    depends_on:
+      ms-db:
+        condition: service_healthy
+    environment:
+      - POSTGRES_URL=${DB_POSTGRES_URL}
+  ms-put:
+    build:
+      context: ./ms-put
+    depends_on:
+      ms-db:
+        condition: service_healthy
+    environment:
+      - POSTGRES_URL=${DB_POSTGRES_URL}
 volumes:
   db-data:

@@ -16,33 +16,6 @@ public class PotatoController {
     }
 
     /* curl sample :
-    curl -i localhost:8080/potatoes
-    */
-    @GetMapping("/potatoes")
-    List<Potato> all(){
-        return repository.findAll();
-    }
-
-    /* curl sample :
-    curl -i -X POST localhost:8080/potatoes ^
-        -H "Content-type:application/json" ^
-        -d "{\"name\": \"Yukon Gold\", \"usage\": \"Pomme vapeur\"}"
-    */
-    @PostMapping("/potatoes")
-    Potato newPotato(@RequestBody Potato newPotato){
-        return repository.save(newPotato);
-    }
-
-    /* curl sample :
-    curl -i localhost:8080/potatoes/1
-    */
-    @GetMapping("/potatoes/{id}")
-    Potato one(@PathVariable Long id){
-        return repository.findById(id)
-                .orElseThrow(() -> new PotatoNotFoundException(id));
-    }
-
-    /* curl sample :
     curl -i -X PUT localhost:8080/potatoes/2 ^
         -H "Content-type:application/json" ^
         -d "{\"name\": \"Estima\", \"usage\": \"Purée de pommes de terre\"}"
@@ -59,13 +32,5 @@ public class PotatoController {
                     newPotato.setId(id);
                     return repository.save(newPotato);
                 });
-    }
-
-    /* curl sample :
-    curl -i -X DELETE localhost:8080/potatoes/2
-    */
-    @DeleteMapping("/potatoes/{id}")
-    void deletePotato(@PathVariable Long id){
-        repository.deleteById(id);
     }
 }
