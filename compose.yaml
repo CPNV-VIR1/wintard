@@ -1,12 +1,9 @@
 services:
-  server:
-    build:
-      context: .
-    depends_on:
-      db:
-        condition: service_healthy
-    environment:
-      - POSTGRES_URL=${DB_POSTGRES_URL}
+  api-gateway:
+    build: 
+      context: ./ms-api-gateway
+    ports:
+      - 8080:80
   ms-db:
     build:
       context: ./ms-db
@@ -17,14 +14,6 @@ services:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
-  api-gateway:
-    image: nginx
-    volumes:
-      - ./nginx:/etc/nginx
-    ports:
-      - 8080:80
-    depends_on:
-      - server
 
 volumes:
   db-data:
