@@ -26,7 +26,11 @@ services:
       ms-db:
         condition: service_healthy
     environment:
-      - POSTGRES_URL=${DB_POSTGRES_URL}
+      spring.datasource.url: ${DB_POSTGRES_URL}
+      spring.datasource.username: ${DB_USER}
+      spring.datasource.password: ${DB_PASSWORD}
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
   ms-get:
     build:
       context: ./ms-get
@@ -34,7 +38,11 @@ services:
       ms-db:
         condition: service_healthy
     environment:
-      - POSTGRES_URL=${DB_POSTGRES_URL}
+      spring.datasource.url: ${DB_POSTGRES_URL}
+      spring.datasource.username: ${DB_USER}
+      spring.datasource.password: ${DB_PASSWORD}
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
   ms-post:
     build:
       context: ./ms-post
@@ -42,7 +50,11 @@ services:
       ms-db:
         condition: service_healthy
     environment:
-      - POSTGRES_URL=${DB_POSTGRES_URL}
+      spring.datasource.url: ${DB_POSTGRES_URL}
+      spring.datasource.username: ${DB_USER}
+      spring.datasource.password: ${DB_PASSWORD}
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
   ms-put:
     build:
       context: ./ms-put
@@ -50,6 +62,10 @@ services:
       ms-db:
         condition: service_healthy
     environment:
-      - POSTGRES_URL=${DB_POSTGRES_URL}
+      spring.datasource.url: ${DB_POSTGRES_URL}
+      spring.datasource.username: ${DB_USER}
+      spring.datasource.password: ${DB_PASSWORD}
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
 volumes:
   db-data:
