@@ -9,6 +9,8 @@ services:
       - ms-get
       - ms-post
       - ms-put
+    volumes:
+      - ./ms-api-gateway/log/nginx:/var/log/nginx
   ms-db:
     build:
       context: ./ms-db
