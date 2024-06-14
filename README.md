@@ -226,11 +226,11 @@ The project uses [Conventional Commits][Commit-url]. The keywords used are: `fea
 
 The project uses the following file naming convention.
 
-| Type    | Naming convention | Example              |
-| ------- | ----------------- | -------------------- |
-| Class   | PascalCase        | `LoginPage.java`     |
-| Tests   | PascalCase        | `LoginPageTest.java` |
-| Compose | kebab-case        | `login-page.yaml`    |
+| Type    | Naming convention | Example                           |
+| ------- | ----------------- | --------------------------------- |
+| Class   | PascalCase        | `Potato.java`                     |
+| Tests   | PascalCase        | `PotatottalyApplicationTest.java` |
+| Compose | kebab-case        | `compose.yaml`                    |
 
 ## License
 
