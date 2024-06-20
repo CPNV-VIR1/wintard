@@ -2,7 +2,6 @@ services:
   ms-api-gateway:
     build:
       context: ./ms-api-gateway
-    restart: always
     ports:
       - 8080:80
     depends_on:
@@ -25,7 +24,6 @@ services:
   ms-delete:
     build:
       context: ./ms-delete
-    restart: always
     depends_on:
       ms-db:
         condition: service_healthy
@@ -38,7 +36,6 @@ services:
   ms-get:
     build:
       context: ./ms-get
-    restart: always
     depends_on:
       ms-db:
         condition: service_healthy
@@ -51,7 +48,6 @@ services:
   ms-post:
     build:
       context: ./ms-post
-    restart: always
     depends_on:
       ms-db:
         condition: service_healthy
@@ -64,7 +60,6 @@ services:
   ms-put:
     build:
       context: ./ms-put
-    restart: always
     depends_on:
       ms-db:
         condition: service_healthy
